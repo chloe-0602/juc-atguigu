@@ -7,6 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * Package: com.atguigu.lock_student
  * Description:
  *  使用ReentrantLock实现卖票
+ *
+ *  查看公平锁和非公平锁
  * @Author Xu, Luqin
  * @Create 2024/10/8 17:37
  * @Version 1.0
@@ -40,7 +42,7 @@ public class LSaleTicket {
 class Ticket{
     private int number = 30;
 
-    private final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock(false);
     void sale(){
         lock.lock();
 
